@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+@using Westwind.Globalization
+<style type="text/css">
+    .bootbox {
+        padding-top: 10% !important;
+    }
+</style>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="navbar-header">
+                        <div class="navbar-brand" style="background-color:#CE252B !important; color:white !important; border-radius:10px !important;"><b>@DbRes.T("Department", "Department", @ViewBag.Lang)</b> @*Building*@ </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-success pull-right" onclick="showModal()">@DbRes.T("New", "Common", @ViewBag.Lang)</button>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-12 alert alert-big alert-danger alert-dismissable fade in margin-top-10"
+                 id="divErrormsgCommon" style="display:none!important;">
+                <div id="lblErrorCommon"></div>
+            </div>
+
+            <div class="col-md-12 alert alert-big alert-success alert-dismissable fade in margin-top-10"
+                 id="divSuccessmsg" style="display:none!important;">
+                <div id="lblSuccess"></div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-lg-12">
+            <div id="dvTable">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="false" style="top:10% !important">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@DbRes.T("Department", "Department", @ViewBag.Lang)</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="col-md-12 alert alert-big alert-danger alert-dismissable fade in margin-top-10"
+                     id="divErrormsg" style="display:none!important;">
+                    <div id="lblError"></div>
+                </div>
+
+                <div class="col-md-12 alert alert-big alert-success alert-dismissable fade in margin-top-10"
+                     id="divSuccessmsg" style="display:none!important;">
+                    <div id="lblSuccess"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="col-md-2 col-sm-2 col-lg-2"></div>
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <input type="hidden" id="hdnDepartmentID" value="0" />
+                            <input type="text" class="form-control" placeholder="@DbRes.T("Department", "Department",@ViewBag.Lang)" id="txtDepartment" />
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2"></div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="col-md-2 col-sm-2 col-lg-2"></div>
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <input type="text" class="form-control" placeholder="@DbRes.T("ShortName", "Department",@ViewBag.Lang)" id="txtDepartmentShort" />
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="Save()">@DbRes.T("Save", "Common", @ViewBag.Lang)</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">@DbRes.T("Close", "Common", @ViewBag.Lang)</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/Master/Department.js"></script>
+<script>
+    var ShortNameLang = '@DbRes.T("ShortName", "Department", @ViewBag.Lang)';
+    var DepartmentLang = '@DbRes.T("Department", "Department", @ViewBag.Lang)';
+
+</script>
+
+
+
+
+
