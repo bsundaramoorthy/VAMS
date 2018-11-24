@@ -271,6 +271,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -484,6 +485,7 @@
     <Content Include="Views\Master\Department.cshtml" />
     <Content Include="Views\Master\Designation.cshtml" />
     <Content Include="Views\Master\Grade.cshtml" />
+    <Content Include="Views\Test\TestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
